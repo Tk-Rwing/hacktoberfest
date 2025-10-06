@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .object{
+            width: 35rem;
+            height: 35rem;
+            background: pink;
+            border-radius: 1rem;
+            margin-bottom: 3.2rem;
+            transition: all 0.6s linear;
+            box-shadow: rgb(rgb(87, 22, 22), rgb(18, 87, 18), rgb(28, 28, 167));
+        }
+        .addTransition{
+            background-color: black;
+            translate: 30rem 0;
+        }
+
+        .addtransition1{
+            background-color: blue;
+            translate: -30rem 0;
+        }
+
+        .addTransition2{
+            border-radius: 0%;
+            background-color: aliceblue;
+            translate: 0rem 0;
+        }
+        .addTransition3{
+            background-color: black;
+        }
+
+
+
+
+    </style>
+    <title>Mouse Event Lisener</title>
+</head>
+<body>
+    <div class="object"></div>
+    <button id="clickbtn">Click Here</button>
+
+
+    <script>
+        let clickbtn = document.getElementById('clickbtn');
+        let object = document.querySelector('.object');
+
+        const handlemouseevents = ()=>{
+            object.classList.add('addTransition');
+        }
+        const handlemouseevents1 = () =>{
+            console.log( object.classList);
+            object.classList.replace('')
+            object.classList.add('addtransition1');
+            console.log( object.classList);   
+        }
+
+        const handlemouseevents3 = ()=>{
+            object.classList.add('addTransition2');
+        }
+
+
+        clickbtn.addEventListener('click',handlemouseevents);
+        clickbtn.addEventListener('dblclick',handlemouseevents1);
+
+        object.addEventListener('mouseover', handlemouseevents3);
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyBoard Event handler</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        #inputData{
+            margin-left: 10cm;
+            margin-top: 5cm;
+        }
+        .show-box{
+            background-color: lightblue;
+            margin-left: 8cm;
+            margin-right: 8cm;
+            border-radius: 1cm;
+            padding-left: 1in;
+        }
+
+
+    </style>
+</head>
+<body>
+     <input type="text" id = "inputData" placeholder="type here!"> 
+     <div class="show-box">
+        <p class="keypress">Key Pressed : </p>
+        <p class="keycode">Key Code : </p>
+        <p class="charcode">Char Code : </p>
+        <p class="keytype">Key Type : </p>
+     </div>
+     <script>
+        let input = document.getElementById('inputData');
+        console.log(input);
+        const showdetail = (event)=>{
+            console.log(event);
+            let x = document.querySelector('.keypress');
+            x.textContent = `Key Pressed : ${event.key}`;
+            let x1 = document.querySelector('.keycode');
+            x1.textContent = `Key Code : ${event.code}`;
+            let x2 = document.querySelector('.charcode');
+            x2.textContent = `Char Code : ${event.keyCode}`;
+            let x3 = document.querySelector('.keytype');
+            x3.textContent = `Key Type : ${event.type}`;
+
+            input.textContent = "";
+        };
+        input.addEventListener('keyup',showdetail);
+
+
+     </script>
+</body>
+</html>

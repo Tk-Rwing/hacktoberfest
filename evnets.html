@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Lisener </title>
+</head>
+<body>
+    <h1>Inline Event</h1>
+    <button onclick="alert('Welcome')">Greeting</button>
+    <button ondblclick="alert('welcome dbl') ">DBl click here </button>
+    <button onmouseover="alert('Welcome on ')">Fly over me </button>
+
+     <h2>Dom Event Handler </h2>
+     <button id="clickbtn" >Greeting</button>
+     <button id="dblbtn">DBl click here </button>
+     <button id="overbtn">Fly over me </button>
+
+    <script>
+        document.getElementById('clickbtn').onclick = ()=>{
+            alert('this is by me');
+        };
+        document.getElementById('dblbtn').ondblclick = ()=>{
+            alert('you click doble');
+        };
+        document.getElementById('overbtn').onmouseover = ()=>{
+            alert('fly over me ');
+        };
+
+         
+    </script>
+</body>
+</html>

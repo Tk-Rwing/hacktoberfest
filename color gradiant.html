@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Gradiant</title>
+    <style>
+        body{
+            height: 100vh;
+            background-image: linear-gradient(
+                to right top,
+                #051937,
+                #004d71,
+                #008793,
+                #00bf72,
+                #a8eb12
+            );
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div id="mybtn">#51937</div>
+        <div id="mybtn1">#008793</div>
+        <h2>Copy your code here</h2>
+    
+        <div class="copyCode">
+            background-image: linear-gradient(to right, rgb(92,154,229), rgb(152,63,198));
+        </div>
+    </section>
+
+    <script>
+        let btn1 = document.getElementById('mybtn');
+        let btn2 = document.getElementById('mybtn1');
+        let myHexaValues = "0123456789abcdef";
+
+
+        const haxaValue = ()=>{
+            let ans = '#';
+            for(let i = 0; i<6;i++)
+            {
+                console.log(myHexaValues[Math.floor(Math.random()*16)]);
+                ans += myHexaValues[Math.floor(Math.random()*16)];
+            }
+            return ans;
+        };
+
+
+        const handleBtn = ()=>{
+            btn1.innerHTML = haxaValue();
+        }
+        const handleBtn1 = ()=>{
+            btn2.innerHTML = haxaValue();
+        }
+
+        btn1.addEventListener('click',handleBtn);
+        btn2.addEventListener('click',handleBtn1);
+    </script>
+</body>
+</html>
